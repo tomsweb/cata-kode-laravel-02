@@ -11,6 +11,7 @@ Pour ce test, il vous faudra réaliser une partie d'un CRUD (Create, Read) pour 
 Chez Bynativ nous utilisons actuellement la version 7 de Laravel sous PHP 7.4, pour démarrer un projet Laravel 7 :
 
 > composer create-project --prefer-dist laravel/laravel:^7.0 Bynativ
+
 > php artisan serve
 
 Bon test !
@@ -35,6 +36,7 @@ Créer un formulaire de prise de rendez-vous avec les champs suivant :
 ### API
 #### Créer une route API d'accès aux rendez-vous
 - Créer une route API publique pour récupérer la liste de tous les rendez-vous.
+
 *La route API est publique, il n'est pas nécessaire d'utiliser une authentification.*
 
 ### Contraintes
@@ -63,7 +65,7 @@ Il est recommandé d'utiliser aux mieux le framework Laravel dans sa version 7, 
 - https://laravel.com/docs/7.x/controllers#dependency-injection-and-controllers
 - https://laravel.com/docs/7.x/validation
 
-**API : **
+**API :**
 - https://laravel.com/docs/7.x/routing#basic-routing
 - https://laravel.com/docs/7.x/eloquent-resources
 
