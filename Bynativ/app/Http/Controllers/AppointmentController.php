@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\Appointment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -21,6 +22,9 @@ class AppointmentController extends Controller
             'date' => 'date|required',
             'message' => 'string|nullable',
         ]);
+
+        $data['date'] = str_replace('T', '', $data['date']);
+        $data['date'] = Carbon::createFromFormat('Y-m-d H:i', $data['date'], 'Europe/Paris')->setTimezone('UTC');
 
         $appointment = Appointment::create($data);
 

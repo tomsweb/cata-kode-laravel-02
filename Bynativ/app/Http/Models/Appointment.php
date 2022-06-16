@@ -2,6 +2,7 @@
 
 namespace App\Http\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
@@ -14,8 +15,12 @@ class Appointment extends Model
         'message'
     ];
 
-    protected $casts = [
-        'date' => 'datetime:Y-m-d H:i:s',
+    protected $dates = [
+        'date'
     ];
 
+    public function getDateAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $value, 'UTC')->setTimezone('Europe/Paris')->format('d/m/Y H:i');
+    }
 }
