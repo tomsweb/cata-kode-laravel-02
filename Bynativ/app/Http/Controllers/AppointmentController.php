@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Models\Appointment;
+use App\Http\Resources\AppointmentResource;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+    public function list()
+    {
+        return AppointmentResource::collection(Appointment::all());
+    }
+
     public function create()
     {
         return view('appointments');
