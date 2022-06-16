@@ -15,7 +15,7 @@
             </div>
             <div class="col-sm-6">
                 <label class="form-label">Téléphone</label>
-                <input type="text" class="form-control" name="phone" value="">
+                <input type="text" class="form-control" name="phone" value="" pattern="[0][1-9]{1}[0-9]{8}">
             </div>
         </div>
         <div class="row mb-4">
