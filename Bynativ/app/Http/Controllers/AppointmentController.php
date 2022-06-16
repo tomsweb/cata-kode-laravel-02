@@ -24,11 +24,11 @@ class AppointmentController extends Controller
 
         $appointment = Appointment::create($data);
 
-        return redirect(route('appointments.create'))->with('success', "Votre demande de RDV a bien été prise en compte. <a href=\"" . route('appointments.show', ['id' => $appointment->id]) . "\">Consulter votre demande de rendez-vous</a>");
+        return redirect(route('appointments.create'))->with('success', "Votre demande de RDV a bien été prise en compte. <a href=\"" . route('appointments.show', ['appointment' => $appointment->id]) . "\">Consulter votre demande de rendez-vous</a>");
     }
 
-    public function show()
+    public function show(Appointment $appointment)
     {
-        return view('appointment');
+        return view('appointment', ['appointment' => $appointment]);
     }
 }
