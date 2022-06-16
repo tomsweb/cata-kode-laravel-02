@@ -41,4 +41,11 @@ class AppointmentController extends Controller
     {
         return view('appointment', ['appointment' => $appointment]);
     }
+
+    public function last()
+    {
+        $appointment = Appointment::orderBy('id', 'desc')->first();
+
+        return view('appointment', ['appointment' => $appointment]);
+    }
 }

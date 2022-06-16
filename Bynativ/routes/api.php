@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', 'AppointmentController@list')->name('list');
+Route::get('/appointments', 'AppointmentController@list')->name('api.list');
