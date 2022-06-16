@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('appointments.')->group(function(){
+    Route::get('/', 'AppointmentController@create')->name('create');
+    Route::post('/', 'AppointmentController@store')->name('store');
 });
