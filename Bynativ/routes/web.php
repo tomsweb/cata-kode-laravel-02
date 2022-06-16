@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::name('appointments.')->group(function(){
     Route::get('/', 'AppointmentController@create')->name('create');
     Route::post('/', 'AppointmentController@store')->name('store');
+    Route::get('/{id}', 'AppointmentController@show')->name('show');
 });
